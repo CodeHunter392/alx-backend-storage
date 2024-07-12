@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
-"""
-A module for asynchronous tasks using asyncio.
-"""
-
+"""Defines an asynchronous coroutine"""
 import asyncio
 import random
 
 
 async def wait_random(max_delay: int = 10) -> float:
-    """
-    Wait for a random amount of time up to `max_delay` seconds.
-    Returns the amount of time waited.
-    """
-    wait_time = random.random() * max_delay
-    await asyncio.sleep(wait_time)
-    return wait_time
+    """Waits for a random delay between 0 and max_delay"""
+    random_number = random.uniform(0, max_delay)
+    await asyncio.sleep(random_number)
+    return random_number
